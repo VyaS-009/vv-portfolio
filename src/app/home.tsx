@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/card"; // Example project card component
 import Resume from "@/components/resume"; // Resume component
 import Certifications from "@/components/certifications"; // Certifications component
-
+import { HyperText } from "@/components/magicui/hyper-text";
+import { TechStack } from "@/components/tech-stack";
 const Home = () => {
   useEffect(() => {
     document.body.style.overflow = "auto";
@@ -14,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="justify-center min-h-screen bg-transparent">
-      <main className="px-8 py-5 space-y-16 pt-0 text-center">
+      <main className="px-8 py-auto space-y-16 pt-0 text-center">
         {/* Hero Section */}
         <section
           id="home"
@@ -27,7 +28,7 @@ const Home = () => {
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1 }}
           >
-            Vedavyas Viswanatham
+            <HyperText>Vedavyas Viswanatham</HyperText>
           </motion.h2>
 
           <motion.p
@@ -71,7 +72,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-8">Projects</h2>
+          <h2 className="text-5xl font-bold text-white mb-8 ">Projects</h2>
           <Card />
         </motion.section>
 
@@ -86,6 +87,19 @@ const Home = () => {
         >
           <h2 className="text-5xl font-bold text-white mb-8">Resume</h2>
           <Resume />
+        </motion.section>
+
+        {/* Tech Stack Section */}
+        <motion.section
+          id="projects"
+          className="min-h-screen flex flex-col justify-center items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <h2 className="text-5xl font-bold text-white mb-8 ">Tech Stack</h2>
+          <TechStack />
         </motion.section>
 
         {/* Certifications Section */}

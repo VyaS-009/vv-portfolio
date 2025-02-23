@@ -17,9 +17,8 @@ const projects = [
     link: "#",
   },
   {
-    title: "Blockchain Air Quality",
-    description:
-      "Machine learning and blockchain integration for air quality forecasting.",
+    title: "CertiFier",
+    description: "Issues Certificates as NFT on Blockchain.",
     link: "#",
   },
 ];
@@ -30,7 +29,7 @@ export const Card = () => {
       {projects.map((project, index) => (
         <motion.div
           key={project.title}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true, amount: 0.3 }}

@@ -31,10 +31,10 @@ const Icons = {
 };
 
 const NAV_ITEMS = [
-  { href: "/", icon: Icons.home, label: "Home" },
-  { href: "/projects", icon: Icons.calendar, label: "Projects" },
-  { href: "/resume", icon: Icons.resume, label: "Resume" },
-  { href: "/contact", icon: Icons.contact, label: "Contact" },
+  { href: "#home", icon: Icons.home, label: "Home" },
+  { href: "#projects", icon: Icons.calendar, label: "Projects" },
+  { href: "#resume", icon: Icons.resume, label: "Resume" },
+  { href: "#contact", icon: Icons.contact, label: "Contact" },
 ];
 
 export function NavBar() {
@@ -51,22 +51,20 @@ export function NavBar() {
           V.V
         </Link>
       </div> */}
-
       <div className="flex items-center space-x-6">
         <TooltipProvider>
-          <Dock className="border-2 border-[#003B00] rounded-lg p-2">
+          <Dock className="border-2 border-[#003B00] rounded-xl p-2">
             {NAV_ITEMS.map((item) => (
               <Tooltip key={item.label}>
                 <TooltipTrigger asChild>
                   <DockIcon asChild>
-                    <Link href={item.href} aria-label={item.label}>
-                      {React.createElement(item.icon, {
-                        className:
-                          //   "w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-blue-500",
-                          "w-6 h-6 text-[#008F11] transition-colors " +
-                          "hover:text-[#00FF41]",
-                      })}
-                    </Link>
+                    <a
+                      href={item.href}
+                      aria-label={item.label}
+                      className="w-6 h-6 text-[#008F11] transition-colors hover:text-[#00FF41]"
+                    >
+                      {React.createElement(item.icon)}
+                    </a>
                   </DockIcon>
                 </TooltipTrigger>
                 <TooltipContent>{item.label}</TooltipContent>
@@ -74,9 +72,6 @@ export function NavBar() {
             ))}
           </Dock>
         </TooltipProvider>
-
-        {/* <Separator orientation="vertical" className="h-6" />
-        <ModeToggle /> */}
       </div>
     </nav>
   );

@@ -25,7 +25,7 @@ const Resume = () => {
       {resumeItems.map((item, index) => (
         <motion.div
           key={item.role}
-          className="bg-gray-800 p-6 rounded-lg shadow-lg text-left"
+          className="bg-gray-800 bg-opacity-60 p-6 rounded-lg shadow-lg text-left"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
