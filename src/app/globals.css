@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LCD Font */
+@font-face {
+  font-family: "LCD Solid";
+  src: url("/fonts/LCD-Solid.ttf") format("woff2"),
+    url("/fonts/LCD-Solid.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+section {
+  padding: 5 rem 0; /* Reduced space between sections */
+}
+/* Default Font Styles */
+html,
+body {
+  font-family: "LCD Solid", sans-serif;
+  color: #00ff00;
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+/* Interactive Grid Square Hover Fix */
+.hoverable-square:hover {
+  fill: #00ff41;
+  transition: fill 0.3s ease;
+}
+
+/* Links */
+a {
+  color: #00ff41;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #008f11;
+}
+
+/* Glass Effect */
+.backdrop-glass {
+  backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add this to globals.css or tailwind config */
+.magic-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+/* Dark Mode Variables */
+@layer base {
+  :root {
+    --background: #0d0d0d;
+    --foreground: #00ff00;
+    --border-color: #003b00;
+  }
+
+  .dark {
+    --background: #0d0d0d;
+    --foreground: #00ff00;
+    --border-color: #003b00;
+  }
+}
+
+/* Global Component Styles */
+@layer base {
+  * {
+    border-color: var(--border-color);
+    outline-color: var(--foreground);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
