@@ -11,14 +11,18 @@
   font-style: normal;
 }
 
-/* Smooth Scroll */
+/* Smooth Scroll and Section Spacing */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem; /* Add padding for anchor links */
 }
+
 section {
-  padding: 5 rem 0; /* Reduced space between sections */
+  padding: 4rem 0; /* More balanced section padding */
+  margin: 2rem 0; /* Add space between sections */
 }
-/* Default Font Styles */
+
+/* Base Styles */
 html,
 body {
   font-family: "LCD Solid", sans-serif;
@@ -27,68 +31,130 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  line-height: 1.6; /* Improve text readability */
+  -webkit-font-smoothing: antialiased; /* Better font rendering */
+  -moz-osx-font-smoothing: grayscale;
 }
-/* Interactive Grid Square Hover Fix */
+
+/* Interactive Elements */
+.hoverable-square {
+  transition: fill 0.3s ease, transform 0.2s ease; /* Smoother transitions */
+}
+
 .hoverable-square:hover {
   fill: #00ff41;
-  transition: fill 0.3s ease;
+  transform: scale(1.05); /* Subtle scale effect */
 }
 
 /* Links */
 a {
   color: #00ff41;
-  transition: color 0.3s;
+  transition: all 0.3s ease; /* Smooth all transitions */
+  text-decoration: none; /* Remove underline */
+  /* padding: 0.2rem 0.4rem; Add padding for better clickability */
+  border-radius: 0.25rem; /* Rounded corners */
 }
 
-a:hover {
+/* a:hover {
   color: #008f11;
-}
+  background-color: rgba(0, 255, 65, 0.1); 
+} */
 
 /* Glass Effect */
 .backdrop-glass {
   backdrop-filter: blur(10px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(13, 13, 13, 0.8); /* Darker, more visible background */
+  border: 1px solid rgba(0, 255, 65, 0.1); /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-/* Add this to globals.css or tailwind config */
+/* Card Animations */
+.magic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .magic-card:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s;
+  transform: scale(1.03); /* Slightly reduced scale for subtlety */
+  box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1); /* Glowing effect */
 }
 
-/* Dark Mode Variables */
+/* Theme Variables */
 @layer base {
   :root {
     --background: #0d0d0d;
     --foreground: #00ff00;
     --border-color: #003b00;
+    --hover-color: #008f11;
+    --accent-color: #00ff41;
+
+    /* Spacing variables */
+    --section-spacing: 4rem;
+    --content-spacing: 2rem;
+    --element-spacing: 1rem;
   }
 
   .dark {
     --background: #0d0d0d;
     --foreground: #00ff00;
     --border-color: #003b00;
+    --hover-color: #008f11;
+    --accent-color: #00ff41;
   }
 }
 
-/* Global Component Styles */
+/* Component Base Styles */
 @layer base {
   * {
     border-color: var(--border-color);
     outline-color: var(--foreground);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--element-spacing);
+    line-height: 1;
+  }
+
+  p {
+    margin-bottom: var(--element-spacing);
+  }
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+    margin: 1.5rem 0;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  :root {
+    --section-spacing: 3rem;
+    --content-spacing: 1.5rem;
+    --element-spacing: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 0;
+    margin: 1rem 0;
+  }
+
+  :root {
+    --section-spacing: 2rem;
+    --content-spacing: 1rem;
+    --element-spacing: 0.5rem;
   }
 }

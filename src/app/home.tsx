@@ -7,6 +7,8 @@ import Resume from "@/components/resume"; // Resume component
 import Certifications from "@/components/certifications"; // Certifications component
 import { HyperText } from "@/components/magicui/hyper-text";
 import { TechStack } from "@/components/tech-stack";
+import { Contact } from "@/components/contact";
+
 const Home = () => {
   useEffect(() => {
     document.body.style.overflow = "auto";
@@ -14,12 +16,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="justify-center min-h-screen bg-transparent">
-      <main className="px-8 py-auto space-y-16 pt-0 text-center">
+    <div className="justify-center min-h-screen bg-transparent overflow-hidden">
+      <main className="px-8 py-auto space-y-4 pt-0 text-center">
         {/* Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex flex-col justify-center pt-0"
+          className="min-h-[80vh] flex flex-col justify-center pt-0"
         >
           <h2 className="text-4xl mb-4 text-white">Hey, I'm</h2>
           <motion.h2
@@ -66,68 +68,69 @@ const Home = () => {
         {/* Projects Section */}
         <motion.section
           id="projects"
-          className="min-h-screen flex flex-col justify-center items-center"
+          className="min-h-[80vh] flex flex-col justify-center items-center py-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-8 ">Projects</h2>
+          <h2 className="text-5xl font-bold text-white mb-20 ">Projects</h2>
           <Card />
         </motion.section>
 
         {/* Resume Section */}
         <motion.section
           id="resume"
-          className="min-h-screen flex flex-col justify-center items-center"
+          className="min-h-[80vh] flex flex-col justify-center items-center py-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-8">Resume</h2>
+          <h2 className="text-5xl font-bold text-white mb-20">Resume</h2>
           <Resume />
         </motion.section>
 
         {/* Tech Stack Section */}
         <motion.section
-          id="projects"
-          className="min-h-screen flex flex-col justify-center items-center"
+          id="tech-stack"
+          className="min-h-[80vh] flex flex-col justify-center items-center py-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-8 ">Tech Stack</h2>
+          <h2 className="text-5xl font-bold text-white mb-20 ">Tech Stack</h2>
           <TechStack />
         </motion.section>
 
         {/* Certifications Section */}
         <motion.section
           id="certifications"
-          className="min-h-screen flex flex-col justify-center items-center"
+          className="min-h-[80vh] flex flex-col justify-center items-center py-0 gap-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-8">Certifications</h2>
+          <h2 className="text-5xl font-bold text-white mb-0">Certifications</h2>
           <Certifications />
         </motion.section>
 
         {/* Contact Section */}
         <motion.section
           id="contact"
-          className="min-h-screen flex flex-col justify-center items-center"
+          className="min-h-[80vh] flex flex-col justify-center items-center pt-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-8">Contact Me</h2>
+          <h2 className="text-5xl font-bold text-white mb-10">Contact Me</h2>
           <p className="text-xl text-white">
             Feel free to reach out for collaborations or just a friendly chat!
           </p>
+          <Contact />
         </motion.section>
       </main>
     </div>

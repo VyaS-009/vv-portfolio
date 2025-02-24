@@ -57,7 +57,7 @@ export function NavBar() {
             {NAV_ITEMS.map((item) => (
               <Tooltip key={item.label}>
                 <TooltipTrigger asChild>
-                  <DockIcon asChild>
+                  <DockIcon>
                     <a
                       href={item.href}
                       aria-label={item.label}
