@@ -39,7 +39,7 @@ export function TechStack() {
   const { theme } = useTheme();
 
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-6 w-full">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-6 w-fit">
       {techStacks.map((tech) => (
         <MagicCard
           key={tech.name}

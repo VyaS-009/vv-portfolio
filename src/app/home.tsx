@@ -17,15 +17,16 @@ const Home = () => {
 
   return (
     <div className="justify-center min-h-screen bg-transparent overflow-hidden">
-      <main className="px-8 py-auto space-y-4 pt-0 text-center">
-        {/* Hero Section */}
+      <main className="px-4 sm:px-4 md:px-6 lg:px-10 xl:px-12 py-auto space-y-4 pt-0 text-center">
+        {/* 🏠 Hero Section */}
         <section
           id="home"
           className="min-h-[80vh] flex flex-col justify-center pt-0"
         >
-          <h2 className="text-4xl mb-4 text-white">Hey, I'm</h2>
+          <h2 className="text-3xl sm:text-2xl mb-4 text-white">Hey, I'm</h2>
+
           <motion.h2
-            className="text-8xl font-bold font-pixel text-[#008F11] hover:text-[#00FF41]"
+            className="text-5xl sm:text-4xl md:text-5xl lg:text-8xl font-bold font-pixel text-[#008F11] hover:text-[#00FF41]"
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1 }}
@@ -34,7 +35,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl mt-4 w-full mx-auto pt-4 text-white"
+            className="text-lg sm:text-md mt-4 w-full mx-auto pt-4 text-white max-w-6xl"
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.5 }}
@@ -59,26 +60,28 @@ const Home = () => {
 
           <a
             href="#contact"
-            className="inline-block mt-8 text-2xl text-[#008F11] hover:text-[#00FF41] transition-colors"
+            className="inline-block mt-8 text-xl sm:text-xl text-[#008F11] hover:text-[#00FF41] transition-colors"
           >
             Say hi ➝
           </a>
         </section>
 
-        {/* Projects Section */}
+        {/* 🚀 Projects Section */}
         <motion.section
           id="projects"
-          className="min-h-[80vh] flex flex-col justify-center items-center py-0"
+          className="min-h-[80vh] flex flex-col justify-center items-center  py-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-20 ">Projects</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 sm:mb-20">
+            Projects
+          </h2>
           <Card />
         </motion.section>
 
-        {/* Resume Section */}
+        {/* 📄 Resume Section */}
         <motion.section
           id="resume"
           className="min-h-[80vh] flex flex-col justify-center items-center py-0"
@@ -87,11 +90,13 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-20">Resume</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 sm:mb-20">
+            Resume
+          </h2>
           <Resume />
         </motion.section>
 
-        {/* Tech Stack Section */}
+        {/* ⚙️ Tech Stack Section */}
         <motion.section
           id="tech-stack"
           className="min-h-[80vh] flex flex-col justify-center items-center py-0"
@@ -100,11 +105,13 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-20 ">Tech Stack</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 sm:mb-20">
+            Tech Stack
+          </h2>
           <TechStack />
         </motion.section>
 
-        {/* Certifications Section */}
+        {/* 📜 Certifications Section */}
         <motion.section
           id="certifications"
           className="min-h-[80vh] flex flex-col justify-center items-center py-0 gap-0"
@@ -113,11 +120,13 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-0">Certifications</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 sm:mb-20">
+            Certifications
+          </h2>
           <Certifications />
         </motion.section>
 
-        {/* Contact Section */}
+        {/* 📬 Contact Section */}
         <motion.section
           id="contact"
           className="min-h-[80vh] flex flex-col justify-center items-center pt-0"
@@ -126,8 +135,10 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-10">Contact Me</h2>
-          <p className="text-xl text-white">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 sm:mb-10">
+            Contact Me
+          </h2>
+          <p className="text-lg sm:text-xl text-white mb-4">
             Feel free to reach out for collaborations or just a friendly chat!
           </p>
           <Contact />
