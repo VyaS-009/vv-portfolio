@@ -8,10 +8,10 @@ const projects = [
     title: "OptiCode",
     description:
       "AI-powered code analysis and optimization tool using Gemini 1.5 Flash.",
-    link: "#",
+    link: "https://github.com/VyaS-009/OptiCode",
   },
   {
-    title: "AI Chatbot",
+    title: "Doc-Chat",
     description:
       "ChatGPT-like chatbot with document summarization and query handling.",
     link: "#",
@@ -41,7 +41,9 @@ export const Card = () => {
             <p className="text-lg text-gray-300 mb-4">{project.description}</p>
             <a
               href={project.link}
-              className="text-[#00FF41] hover:text-[#008F11] transition-colors"
+              className="text-[#008F11] hover:text-[#00FF41] transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Learn More ➝
             </a>

@@ -2,7 +2,7 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+
 import { cn } from "@/lib/utils";
 import NavBar from "@/components/nav-bar";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
