@@ -17,7 +17,7 @@ const experience = {
 
 const Resume = () => {
   return (
-    <div className="flex flex-col justify-center md:flex-row items-start min-h-screen p-4 pt-0 pb-0 gap-8">
+    <div className="flex flex-col justify-center  md:flex-row items-start min-h-screen p-4 pt-0 pb-0 gap-8">
       {/* Left: Resume Image/PDF Display */}
       <ShineBorder
         className="relative w-full md:w-1/2 h-full rounded-lg"

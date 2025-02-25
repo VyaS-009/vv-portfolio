@@ -119,7 +119,10 @@ export function HyperText({
   return (
     <MotionComponent
       ref={elementRef}
-      className={cn("overflow-hidden py-2 text-8xl font-bold", className)}
+      className={cn(
+        "flex flex-wrap gap-1 sm:gap-3 py-2px text-4xl sm:text-6xl md:text-6xl lg:text-8xl font-bold break-words tracking-normal",
+        className
+      )}
       onMouseEnter={handleAnimationTrigger}
       {...props}
     >
@@ -127,7 +130,10 @@ export function HyperText({
         {displayText.map((letter, index) => (
           <motion.span
             key={index}
-            className={cn("LCD Solid", letter === " " ? "w-3" : "")}
+            className={cn(
+              "LCD Solid inline-block",
+              letter === " " ? "w-2 sm:w-3" : ""
+            )}
           >
             {letter.toUpperCase()}
           </motion.span>
