@@ -44,8 +44,8 @@ export function Contact() {
             className="flex flex-col items-center justify-center p-4 cursor-pointer space-y-2"
             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
           >
-            <div className="text-6xl text-[#ffffff] p-2">{social.icon}</div>
-            <div className="text-lg font-semibold text-[#00FF41]">
+            <div className="text-2xl text-[#ffffff] p-2">{social.icon}</div>
+            <div className="text-sm font-semibold text-[#00FF41]">
               {social.name}
             </div>
           </MagicCard>

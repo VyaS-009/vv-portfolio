@@ -17,53 +17,12 @@ interface NeonColorsProps {
 }
 
 interface NeonGradientCardProps {
-  /**
-   * @default <div />
-   * @type ReactElement
-   * @description
-   * The component to be rendered as the card
-   * */
   as?: ReactElement;
-  /**
-   * @default ""
-   * @type string
-   * @description
-   * The className of the card
-   */
   className?: string;
-
-  /**
-   * @default ""
-   * @type ReactNode
-   * @description
-   * The children of the card
-   * */
   children?: ReactNode;
-
-  /**
-   * @default 5
-   * @type number
-   * @description
-   * The size of the border in pixels
-   * */
   borderSize?: number;
-
-  /**
-   * @default 20
-   * @type number
-   * @description
-   * The size of the radius in pixels
-   * */
   borderRadius?: number;
-
-  /**
-   * @default "{ firstColor: '#ff00aa', secondColor: '#00FFF1' }"
-   * @type string
-   * @description
-   * The colors of the neon gradient
-   * */
   neonColors?: NeonColorsProps;
-
   [key: string]: any;
 }
 
@@ -124,13 +83,16 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
       }
       className={cn(
         "relative z-10 size-full rounded-[var(--border-radius)]",
+        "flex flex-col items-center justify-center",
+        "w-full h-full",
         className
       )}
       {...props}
     >
       <div
         className={cn(
-          "relative size-full min-h-[inherit] rounded-[var(--card-content-radius)] bg-gray-100 p-6",
+          "relative size-full min-h-[inherit] rounded-[var(--card-content-radius)] bg-gray-100",
+          "p-4 sm:p-6 md:p-8", // Responsive padding
           "before:absolute before:-left-[var(--border-size)] before:-top-[var(--border-size)] before:-z-10 before:block",
           "before:h-[var(--pseudo-element-height)] before:w-[var(--pseudo-element-width)] before:rounded-[var(--border-radius)] before:content-['']",
           "before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-[length:100%_200%]",
